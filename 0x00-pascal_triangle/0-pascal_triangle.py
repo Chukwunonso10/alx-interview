@@ -1,13 +1,20 @@
 def pascal_triangle(n):
+    """
+    returns a list of lists 
+    """
+    triangle = []
+
+    # return (trianlgle if n <= 0)
     if n <= 0:
-        return []
+        return triangle
+    for i in range(n):
+        temp_list = []
 
-    p_triangle = [1]
-    for i in range(i, n):
-        new_row = [1]
-        for j in range(1, i):
-            new_row.append(p_triangle[i-1][j-1] + p_triangle[i-1][j])
-        new_row.append(1)
-        p_triangle.append(new_row)
-
-    return p_triangle
+        for j in range(i+1):
+            if j == 0 or j == i:
+                temp_list.append(1)
+            else:
+                temp_list.append(triangle[i-1][j-1] + triangle[i-1][j])
+        triangle.append(temp_list)
+    # print(triangle)
+    return triangle
