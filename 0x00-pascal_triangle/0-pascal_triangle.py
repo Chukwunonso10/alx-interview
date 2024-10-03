@@ -5,7 +5,7 @@ def pascal_triangle(n):
     """
     returns a list of lists
     """
-    triangle = []
+    triangle = [[]]
 
     # return (trianlgle if n <= 0)
     if n <= 0:
